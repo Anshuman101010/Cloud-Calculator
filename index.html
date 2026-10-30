@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app">
+        <section class="calculator-card">
+            <div class="eyebrow">AWS SERVERLESS PROJECT</div>
+
+            <h1>Cloud Calculator</h1>
+            <p class="subtitle">
+                Simple calculations, powered by AWS Lambda.
+            </p>
+
+            <!-- Calculator Form -->
+            <form id="calculator-form">
+                <label for="num1">First number</label>
+                <input
+                    id="num1"
+                    type="number"
+                    step="any"
+                    required
+                    placeholder="Enter a number"
+                >
+
+                <label for="operation">Operation</label>
+                <select id="operation">
+                    <option value="add">Addition (+)</option>
+                    <option value="subtract">Subtraction (−)</option>
+                    <option value="multiply">Multiplication (×)</option>
+                    <option value="divide">Division (÷)</option>
+                </select>
+
+                <label for="num2">Second number</label>
+                <input
+                    id="num2"
+                    type="number"
+                    step="any"
+                    required
+                    placeholder="Enter a number"
+                >
+
+                <button id="calculate-button" type="submit">
+                    Calculate result
+                </button>
+            </form>
+
+            <!-- Calculator Status Message -->
+            <div
+                id="message"
+                class="message"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+            <!-- Calculation Result -->
+            <section id="result-card" class="result-card" hidden>
+                <span class="result-label">RESULT</span>
+                <strong id="result-value">—</strong>
+                <p id="calculation-summary"></p>
+            </section>
+
+            <!-- History Button -->
+            <button
+                id="history-button"
+                type="button"
+                class="history-button"
+                aria-controls="history-card"
+                aria-expanded="false"
+            >
+                View Calculation History
+            </button>
+
+            <!-- Calculation History -->
+            <section id="history-card" class="history-card" hidden>
+                <h2>Calculation History</h2>
+
+                <p
+                    id="history-message"
+                    class="message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+                <div id="history-list"></div>
+            </section>
+
+            <!-- Footer -->
+            <p class="footer">
+                Hosted on AWS Amplify · API Gateway · Lambda · DynamoDB
+            </p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+```
